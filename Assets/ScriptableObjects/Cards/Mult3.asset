@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b27f92042a948d2429a407725b983e39, type: 3}
   m_Name: Mult3
   m_EditorClassIdentifier: Assembly-CSharp::Card
-  cardName: 
-  type: 
-  value: 0
-  description: 
-  cardSprite: {fileID: 0}
-  effect: {fileID: 0}
+  cardName: Mul3
+  type: mult
+  value: 3
+  description: Multiplies the previous cards values by 3
+  cardSprite: {fileID: -8948594128104214495, guid: eacff3887381e496b904dd1b6f030a6d, type: 3}
+  effect: {fileID: 11400000, guid: 943c55c70de814b069fcfbf51d3ad1b1, type: 2}

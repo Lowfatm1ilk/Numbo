@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b27f92042a948d2429a407725b983e39, type: 3}
   m_Name: Add4
   m_EditorClassIdentifier: Assembly-CSharp::Card
-  cardName: 
+  cardName: Add4
   type: add
-  value: 0
-  description: 
-  cardSprite: {fileID: 0}
-  effect: {fileID: 0}
+  value: 4
+  description: Adds 4 to total score
+  cardSprite: {fileID: 2237958531504406112, guid: 9dbc84c13f1c143b4b95a7df3a5d7421, type: 3}
+  effect: {fileID: 11400000, guid: bbeeef3088ede46f19ccb263a5bfcd08, type: 2}

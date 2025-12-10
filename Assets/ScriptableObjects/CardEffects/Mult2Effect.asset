@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e98098f518c148ae8176fe841a14e80, type: 3}
   m_Name: Mult2Effect
   m_EditorClassIdentifier: Assembly-CSharp::Mult
-  number: 0
+  number: 2
   nextCard: {fileID: 0}
   totalAmount: 0

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24302da03d8a1e4abd5c9464cee9aed, type: 3}
   m_Name: Add4Effect
   m_EditorClassIdentifier: Assembly-CSharp::AddSub
-  number: 0
+  number: 4
