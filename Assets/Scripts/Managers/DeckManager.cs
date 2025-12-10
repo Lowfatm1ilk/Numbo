@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class DeckManager : MonoBehaviour
 {
-    public List<Card> deck = new List<Card>();
+    public List<GameObject> deck = new List<GameObject>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

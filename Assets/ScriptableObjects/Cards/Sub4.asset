@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27f92042a948d2429a407725b983e39, type: 3}
+  m_Name: Sub4
+  m_EditorClassIdentifier: Assembly-CSharp::Card
+  cardName: Sub4
+  type: Sub
+  value: -4
+  description: Subtracts 4
+  cardSprite: {fileID: 7316176786736914008, guid: c7af1adef2e4d4b2db89b3074836c558, type: 3}
+  effect: {fileID: 11400000, guid: 19555ccf4f217459692768c0e157c111, type: 2}
