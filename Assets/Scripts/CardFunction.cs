@@ -12,7 +12,10 @@ public class CardFunction : MonoBehaviour, IClickable
     public void OnClicked()
     {
         Debug.Log("Card clicked: " + data.cardName);
-        HandManager.Instance.AddCardToHand(data);
+        if (!inHand)
+        {
+            HandManager.Instance.AddCardToHand(data);
+        }        
     }
 
 }
