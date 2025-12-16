@@ -3,23 +3,24 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Mult", menuName = "CardEffects/Mult")]
 public class Mult : CardEffect
 {
-    public int number;
+    public int multiplier;
 
-    public Card nextCard;
-
-    public int totalAmount;
-
-    public void Update()
+    public override void Apply(
+        ref int score,
+        CardFunction currentCard,
+        CardFunction previousCard
+    )
     {
-        if(nextCard.type == "simple")
+        Debug.Log("Apply triggered");
+        if (previousCard == null)
+            return;
+
+        Card prevData = previousCard.data;
+
+        if (prevData.type == CardType.Simple)
         {
-            totalAmount += nextCard.value;
-            totalAmount *= number;
+            int amount = prevData.value * multiplier;
+            score += amount;
         }
-    }
-
-    public override void Apply(ref int score)
-    {
-        score += totalAmount;
     }
 }

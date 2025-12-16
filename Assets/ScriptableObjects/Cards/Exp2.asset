@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Exp2
   m_EditorClassIdentifier: Assembly-CSharp::Card
   cardName: Exp2
-  type: Exp
+  type: 0
   value: 2
   description: The card it's applied to it multiplies itself by itself.
   cardSprite: {fileID: 3467362655305397354, guid: 5ba75b9f992ea4c9694cbcac8f18065a, type: 3}
-  effect: {fileID: 0}
+  effect: {fileID: 11400000, guid: 13ccb09fa4d0b403ba1d074fd4f19a42, type: 2}

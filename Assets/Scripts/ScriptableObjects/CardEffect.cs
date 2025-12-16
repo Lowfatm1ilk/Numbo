@@ -3,5 +3,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CardEffect", menuName = "Scriptable Objects/CardEffect")]
 public abstract class CardEffect : ScriptableObject
 {
-    public abstract void Apply(ref int score);
+    public abstract void Apply(
+        ref int score,
+        CardFunction currentCard,
+        CardFunction previousCard
+    );
 }

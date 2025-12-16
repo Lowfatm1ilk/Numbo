@@ -4,22 +4,34 @@ using System;
 [CreateAssetMenu(fileName = "Exp", menuName = "CardEffects/Exp")]
 public class Exp : CardEffect
 {
-    public int number;
+    public int exponent;
 
-    public Card nextCard;
-
-    public int baseAmount;
-
-    public void Update()
+    public override void Apply(
+        ref int score,
+        CardFunction currentCard,
+        CardFunction previousCard
+    )
     {
-        if (nextCard.type == "simple")
+        if (previousCard == null)
         {
-            baseAmount += nextCard.value;
+            Debug.Log("Exp: No previous card, nothing to do");
+            return;
+        }
+
+        Card prevData = previousCard.data;
+        Debug.Log($"Exp: Previous card = {prevData.cardName}, type = {prevData.type}, value = {prevData.value}");
+
+        if (prevData.type == CardType.Simple)
+        {
+            int baseAmount = prevData.value;
+            int amount = (int)Math.Pow(baseAmount, exponent);
+            score += amount;
+            Debug.Log($"Exp: Added {amount} to score, total now {score}");
+        }
+        else
+        {
+            Debug.Log("Exp: Previous card is not Simple, skipping");
         }
     }
 
-    public override void Apply(ref int score)
-    {
-        score += (int)Math.Pow(baseAmount, number);
-    }
 }

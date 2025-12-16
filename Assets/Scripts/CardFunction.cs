@@ -4,6 +4,7 @@ public class CardFunction : MonoBehaviour, IClickable
 {
     public Card data;
     public bool inHand;
+    public bool inPlay;
 
     [Header("Hover")]
     public float hoverHeight = 0.5f;
@@ -14,25 +15,31 @@ public class CardFunction : MonoBehaviour, IClickable
 
     void Start()
     {
-        originalLocalPos = transform.localPosition;
         sr = GetComponent<SpriteRenderer>();
         if (sr != null)
-        {
             originalSortingOrder = sr.sortingOrder;
-        }
     }
 
     public void OnClicked()
     {
-        if (inHand || HandManager.Instance.maxHandAmount == HandManager.Instance.handCards.Count)
+        if (inPlay) return;
+
+        if (inHand)
         {
-            Debug.Log("Card clicked: " + data.cardName);
+            MoveToPlay();
+            inHand = false;
+            inPlay = true;
+
+            HandManager.Instance.RemoveCardFromHand(this);
             return;
         }
 
-        MoveToHand();
-        HandManager.Instance.AddCardToHand(data);
-        inHand = true;
+        if (!inHand && HandManager.Instance.handCards.Count < HandManager.Instance.maxHandAmount)
+        {
+            MoveToHand();
+            HandManager.Instance.AddCardToHand(this);
+            inHand = true;
+        }
     }
 
     public void OnHover()
@@ -42,9 +49,7 @@ public class CardFunction : MonoBehaviour, IClickable
         transform.localPosition = originalLocalPos + Vector3.up * hoverHeight;
 
         if (sr != null)
-        {
             sr.sortingOrder = HandManager.Instance.GetNextSortingOrder();
-        }
     }
 
     public void OnHoverExit()
@@ -54,24 +59,30 @@ public class CardFunction : MonoBehaviour, IClickable
         transform.localPosition = originalLocalPos;
 
         if (sr != null)
-        {
             sr.sortingOrder = originalSortingOrder;
-        }
     }
 
     void MoveToHand()
     {
-        Transform anchor = HandManager.Instance.handAnchor;
+        transform.SetParent(HandManager.Instance.handAnchor);
+    }
 
-        transform.SetParent(anchor);
-        transform.localPosition = HandManager.Instance.GetNextHandLocalPosition();
+    void MoveToPlay()
+    {
+        transform.SetParent(ScoreManager.Instance.playedAnchor);
+        ScoreManager.Instance.AddCardToPlay(this);
+    }
 
-        originalLocalPos = transform.localPosition; 
+    public void SetHandPosition(Vector3 localPos)
+    {
+        transform.localPosition = localPos;
+        originalLocalPos = localPos;
+    }
 
-        if (sr != null)
-        {
-            sr.sortingOrder = HandManager.Instance.GetNextSortingOrder();
-            originalSortingOrder = sr.sortingOrder;
-        }
+    public void SetPlayPosition(Vector3 localPos)
+    {
+        transform.localPosition = localPos;
+        originalLocalPos = localPos;
     }
 }
+

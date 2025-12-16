@@ -12,6 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa01e5c4320264e73a6e9877d3710d36, type: 3}
   m_Name: Exp3Effect
   m_EditorClassIdentifier: Assembly-CSharp::Exp
-  number: 3
-  nextCard: {fileID: 0}
-  baseAmount: 0
+  exponent: 3
