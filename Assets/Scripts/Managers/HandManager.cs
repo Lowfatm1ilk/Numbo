@@ -4,16 +4,33 @@ using System.Collections.Generic;
 public class HandManager : MonoBehaviour
 {
     public static HandManager Instance;
-    public List<Card> hand = new List<Card>();
-    private void Awake()
+
+    public Transform handAnchor;
+    public float cardSpacing = 1.5f;
+
+    public List<Card> handCards = new List<Card>();
+
+    private int sortingIndex = 100;
+
+    public int maxHandAmount;
+
+    void Awake()
     {
-        Instance = this; 
+        Instance = this;
     }
 
-
-    public void AddCardToHand(Card data)
+    public Vector3 GetNextHandLocalPosition()
     {
-        hand.Add(data);
-        Debug.Log("Added card to hand: " + data.cardName);
+        return new Vector3(handCards.Count * cardSpacing, 0f, 0f);
+    }
+
+    public void AddCardToHand(Card card)
+    {
+        handCards.Add(card);
+    }
+
+    public int GetNextSortingOrder()
+    {
+        return sortingIndex++;
     }
 }
