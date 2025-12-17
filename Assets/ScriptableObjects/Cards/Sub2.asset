@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sub2
   m_EditorClassIdentifier: Assembly-CSharp::Card
   cardName: Sub2
-  type: Sub
+  type: 0
   value: -2
   description: Subtracts 2
   cardSprite: {fileID: -6212091817297008591, guid: cfc0aaf6468f14a60924c354439fb352, type: 3}

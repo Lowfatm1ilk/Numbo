@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Add2
   m_EditorClassIdentifier: Assembly-CSharp::Card
   cardName: Add2
-  type: add
+  type: 0
   value: 2
   description: Adds 2
   cardSprite: {fileID: 4965740900844695361, guid: 83c10202f6f2e443c867fec6594aca6d, type: 3}

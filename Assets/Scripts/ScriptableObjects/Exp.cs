@@ -25,8 +25,8 @@ public class Exp : CardEffect
         {
             int baseAmount = prevData.value;
             int amount = (int)Math.Pow(baseAmount, exponent);
-            score += amount;
-            Debug.Log($"Exp: Added {amount} to score, total now {score}");
+            prevData.value = amount;
+            Debug.Log($"Exp: Changed{prevData.cardName} value now {amount}");
         }
         else
         {

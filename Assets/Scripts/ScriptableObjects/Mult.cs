@@ -11,7 +11,6 @@ public class Mult : CardEffect
         CardFunction previousCard
     )
     {
-        Debug.Log("Apply triggered");
         if (previousCard == null)
             return;
 
@@ -19,8 +18,8 @@ public class Mult : CardEffect
 
         if (prevData.type == CardType.Simple)
         {
-            int amount = prevData.value * multiplier;
-            score += amount;
+            prevData.value = prevData.value * multiplier;
+            Debug.Log($"Exp: Changed{prevData.cardName} value now {prevData.value}");
         }
     }
 }

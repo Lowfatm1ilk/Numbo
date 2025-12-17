@@ -17,6 +17,7 @@ public class ScoreManager : MonoBehaviour
         Instance = this;
     }
 
+
     public void AddCardToPlay(CardFunction card)
     {
         CardFunction previousCard = null;
@@ -26,17 +27,37 @@ public class ScoreManager : MonoBehaviour
 
         playedCards.Add(card);
 
-        if (card.data.effect != null)
+        if(card.data.type != CardType.Simple && card.data.effect != null)
         {
+            Debug.Log("Played non simple card");
             card.data.effect.Apply(ref score, card, previousCard);
-            Debug.Log($"Score after {card.data.cardName}: {score}");
-        }
-        else
-        {
-            Debug.Log("No effect");
         }
 
         ReflowPlayedCards();
+        CalculateScore();
+    }
+
+    void CalculateScore()
+    {
+        score = 0;
+        for (int i = 0; i < playedCards.Count; i++)
+        {
+            if(playedCards[i].data.type == CardType.Simple)
+            {
+                score += playedCards[i].data.value;
+                Debug.Log(playedCards[i].data.value);
+            }
+        }
+
+        CheckScore();
+    }
+
+    void CheckScore()
+    {
+        if(score >= GoalManager.Instance.goal)
+        {
+            Debug.Log("Win");
+        }
     }
 
     void ReflowPlayedCards()

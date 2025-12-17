@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Add4
   m_EditorClassIdentifier: Assembly-CSharp::Card
   cardName: Add4
-  type: add
+  type: 0
   value: 4
   description: Adds 4 to total score
   cardSprite: {fileID: 2237958531504406112, guid: 9dbc84c13f1c143b4b95a7df3a5d7421, type: 3}
