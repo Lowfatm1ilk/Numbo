@@ -14,12 +14,12 @@ public class Mult : CardEffect
         if (previousCard == null)
             return;
 
-        Card prevData = previousCard.data;
+        int prevData = previousCard.currentValue;
 
-        if (prevData.type == CardType.Simple)
+        if (previousCard.data.type == CardType.Simple)
         {
-            prevData.value = prevData.value * multiplier;
-            Debug.Log($"Exp: Changed{prevData.cardName} value now {prevData.value}");
+            previousCard.currentValue = prevData * multiplier;
+            Debug.Log($"Exp: Changed{prevData} value now {previousCard.currentValue}");
         }
     }
 }

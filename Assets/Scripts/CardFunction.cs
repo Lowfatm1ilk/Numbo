@@ -3,6 +3,7 @@ using UnityEngine;
 public class CardFunction : MonoBehaviour, IClickable
 {
     public Card data;
+    public int currentValue;
     public bool inHand;
     public bool inPlay;
 
@@ -18,6 +19,7 @@ public class CardFunction : MonoBehaviour, IClickable
         sr = GetComponent<SpriteRenderer>();
         if (sr != null)
             originalSortingOrder = sr.sortingOrder;
+        currentValue = data.value;
     }
 
     public void OnClicked()

@@ -5,6 +5,9 @@ public class GoalManager : MonoBehaviour
 {
     public int goal;
 
+    public int player1Score;
+    public int player2Score;
+
     public static GoalManager Instance;
 
     void Awake()

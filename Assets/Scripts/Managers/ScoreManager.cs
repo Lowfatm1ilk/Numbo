@@ -44,11 +44,11 @@ public class ScoreManager : MonoBehaviour
         {
             if(playedCards[i].data.type == CardType.Simple)
             {
-                score += playedCards[i].data.value;
-                Debug.Log(playedCards[i].data.value);
+                score += playedCards[i].currentValue;
+                Debug.Log(playedCards[i].currentValue);
             }
         }
-
+        Debug.Log(score);
         CheckScore();
     }
 

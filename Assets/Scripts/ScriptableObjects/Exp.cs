@@ -18,15 +18,14 @@ public class Exp : CardEffect
             return;
         }
 
-        Card prevData = previousCard.data;
-        Debug.Log($"Exp: Previous card = {prevData.cardName}, type = {prevData.type}, value = {prevData.value}");
+        int prevData = previousCard.currentValue;
 
-        if (prevData.type == CardType.Simple)
+        if (previousCard.data.type == CardType.Simple)
         {
-            int baseAmount = prevData.value;
+            int baseAmount = prevData;
             int amount = (int)Math.Pow(baseAmount, exponent);
-            prevData.value = amount;
-            Debug.Log($"Exp: Changed{prevData.cardName} value now {amount}");
+            previousCard.currentValue = amount;
+            Debug.Log($"Exp: Changed{prevData} value now {amount}");
         }
         else
         {
