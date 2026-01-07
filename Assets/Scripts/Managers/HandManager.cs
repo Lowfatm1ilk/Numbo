@@ -15,6 +15,11 @@ public class HandManager : MonoBehaviour
         Instance = this;
     }
 
+    void OnDisable()
+    {
+        Instance = null;
+    }
+
     public void AddCardToHand(CardFunction card)
     {
         handCards.Add(card);

@@ -1,16 +1,18 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TurnManager : MonoBehaviour
 {
     public bool player1Turn = true;
     public bool player2Turn = false;
-
     public GameObject player1;
     public GameObject player2;
     public Vector3 player1camera;
     public Vector3 player2camera;
 
     public GameObject mainCamera;
+
+    public int actionsLeft = 2;
     public void Update()
     {
         if (player1Turn)
