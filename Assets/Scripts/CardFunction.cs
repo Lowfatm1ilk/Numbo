@@ -24,6 +24,7 @@ public class CardFunction : MonoBehaviour, IClickable
 
     public void OnClicked()
     {
+        Debug.Log("Clicked");
         if (inPlay) return;
 
         if (inHand)
