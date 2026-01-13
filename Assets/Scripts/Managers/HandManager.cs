@@ -1,24 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
+
 public class HandManager : MonoBehaviour
 {
-    public static HandManager Instance;
-
     public Transform handAnchor;
     public float cardSpacing = 1.5f;
-    public int maxHandAmount;
+    public int maxHandAmount = 5;
+
     private int sortingIndex = 100;
     public List<CardFunction> handCards = new List<CardFunction>();
-
-    void Awake()
-    {
-        Instance = this;
-    }
-
-    void OnDisable()
-    {
-        Instance = null;
-    }
 
     public void AddCardToHand(CardFunction card)
     {
@@ -45,5 +35,4 @@ public class HandManager : MonoBehaviour
     {
         return sortingIndex++;
     }
-
 }
