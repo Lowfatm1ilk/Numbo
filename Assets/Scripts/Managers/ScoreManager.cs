@@ -9,6 +9,8 @@ public class ScoreManager : MonoBehaviour
     public int score;
     public List<CardFunction> playedCards = new List<CardFunction>();
 
+    public GameObject winScreen;
+
     public void AddCardToPlay(CardFunction card)
     {
         CardFunction previousCard = null;
@@ -45,6 +47,7 @@ public class ScoreManager : MonoBehaviour
         if (score >= GoalManager.Instance.goal)
         {
             Debug.Log($"{gameObject.name} Wins!");
+            winScreen.SetActive(true);
         }
     }
 
