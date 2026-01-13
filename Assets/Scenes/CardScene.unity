@@ -376,11 +376,11 @@ Transform:
   m_GameObject: {fileID: 373965004}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.88484, y: -0.77887, z: 0}
+  m_LocalPosition: {x: -1.85371, y: 1.7257899, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1290832530}
+  m_Father: {fileID: 2069990845}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &506207738
 GameObject:
@@ -391,7 +391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 506207739}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayedCards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 507094636}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -698,11 +698,11 @@ Transform:
   m_GameObject: {fileID: 568088380}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.88484, y: -0.77887, z: 0}
+  m_LocalPosition: {x: -1.8537102, y: 1.7257899, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1443404531}
+  m_Father: {fileID: 1874006560}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &568088382
 MonoBehaviour:
@@ -745,12 +745,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589481275}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.96887004, y: 2.50466, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1290832530}
+  m_Father: {fileID: 2069990845}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &589481277
 MonoBehaviour:
@@ -922,12 +922,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128359687}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.96887016, y: 2.50466, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1443404531}
+  m_Father: {fileID: 1874006560}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1128359689
 MonoBehaviour:
@@ -945,39 +945,6 @@ MonoBehaviour:
   playedCardSpacing: 1.5
   score: 0
   playedCards: []
---- !u!1 &1290832529
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1290832530}
-  m_Layer: 0
-  m_Name: Managers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1290832530
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1290832529}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.96887004, y: 2.50466, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 373965006}
-  - {fileID: 589481276}
-  m_Father: {fileID: 2069990845}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1313145885
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,7 +954,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1313145886}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayedCards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1235,39 +1202,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1443404530
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1443404531}
-  m_Layer: 0
-  m_Name: Managers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1443404531
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443404530}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.96887004, y: 2.50466, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 568088381}
-  - {fileID: 1128359688}
-  m_Father: {fileID: 1874006560}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1527461868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,7 +1211,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1527461869}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1431,13 +1365,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f33ce12004f44a4bbf92de738a269ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  player1Turn: 0
-  player2Turn: 1
+  player1Turn: 1
   player1: {fileID: 2069990844}
   player2: {fileID: 1874006559}
-  player1camera: {x: 0, y: 0, z: 0}
-  player2camera: {x: 0, y: 0, z: 0}
+  player1camera: {x: 0.43, y: 0, z: -10}
+  player2camera: {x: 19, y: 0, z: -10}
   mainCamera: {fileID: 519420028}
+  cameraSpeed: 8
+  startingHandSize: 5
+  actionsLeft: 2
+  actionsPerTurn: 2
 --- !u!4 &1675080204
 Transform:
   m_ObjectHideFlags: 0
@@ -1484,7 +1421,8 @@ Transform:
   m_Children:
   - {fileID: 1313145886}
   - {fileID: 507094636}
-  - {fileID: 1443404531}
+  - {fileID: 568088381}
+  - {fileID: 1128359688}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2069990844
@@ -1518,7 +1456,8 @@ Transform:
   m_Children:
   - {fileID: 506207739}
   - {fileID: 1527461869}
-  - {fileID: 1290832530}
+  - {fileID: 373965006}
+  - {fileID: 589481276}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2143681836

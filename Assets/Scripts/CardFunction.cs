@@ -4,8 +4,12 @@ public class CardFunction : MonoBehaviour, IClickable
 {
     public Card data;
     public int currentValue;
+
     public bool inHand;
     public bool inPlay;
+
+    public HandManager ownerHand;
+    public ScoreManager ownerScore;
 
     [Header("Hover")]
     public float hoverHeight = 0.5f;
@@ -19,31 +23,54 @@ public class CardFunction : MonoBehaviour, IClickable
         sr = GetComponent<SpriteRenderer>();
         if (sr != null)
             originalSortingOrder = sr.sortingOrder;
+
         currentValue = data.value;
     }
 
     public void OnClicked()
     {
-        Debug.Log("Clicked");
         if (inPlay) return;
 
-        if (inHand)
+        if (!inHand && ownerHand == null)
         {
-            MoveToPlay();
-            inHand = false;
-            inPlay = true;
+            HandManager hand = TurnManager.Instance.CurrentHand;
+            ScoreManager score = TurnManager.Instance.CurrentScore;
 
-            HandManager.Instance.RemoveCardFromHand(this);
+            ownerHand = hand;
+            ownerScore = score;
+
+            MoveToHand();
+            inHand = true;
+
+            bool wasPlayerTurn = TurnManager.Instance.CurrentPhase == TurnPhase.PlayerTurn;
+
+            TurnManager.Instance.NotifyCardDrawn();
+
+            if (wasPlayerTurn)
+                TurnManager.Instance.SpendAction();
+
             return;
         }
 
-        if (!inHand && HandManager.Instance.handCards.Count < HandManager.Instance.maxHandAmount)
+        if (inHand)
         {
-            MoveToHand();
-            HandManager.Instance.AddCardToHand(this);
-            inHand = true;
+            if (TurnManager.Instance.CurrentPhase == TurnPhase.PlayerTurn)
+            {
+                TurnManager.Instance.SpendAction();
+                MoveToPlay();
+                inHand = false;
+                inPlay = true;
+
+                ownerHand.RemoveCardFromHand(this);
+            }   
+            else
+            {
+                return;
+            }
+
         }
     }
+
 
     public void OnHover()
     {
@@ -52,7 +79,7 @@ public class CardFunction : MonoBehaviour, IClickable
         transform.localPosition = originalLocalPos + Vector3.up * hoverHeight;
 
         if (sr != null)
-            sr.sortingOrder = HandManager.Instance.GetNextSortingOrder();
+            sr.sortingOrder = ownerHand.GetNextSortingOrder();
     }
 
     public void OnHoverExit()
@@ -67,13 +94,23 @@ public class CardFunction : MonoBehaviour, IClickable
 
     void MoveToHand()
     {
-        transform.SetParent(HandManager.Instance.handAnchor);
+        transform.SetParent(ownerHand.handAnchor);
+
+        if (sr != null)
+        {
+            sr.sortingLayerName = "Cards";
+            sr.sortingOrder = ownerHand.GetNextSortingOrder();
+            originalSortingOrder = sr.sortingOrder;
+        }
+
+        ownerHand.AddCardToHand(this);
     }
+
 
     void MoveToPlay()
     {
-        transform.SetParent(ScoreManager.Instance.playedAnchor);
-        ScoreManager.Instance.AddCardToPlay(this);
+        transform.SetParent(ownerScore.playedAnchor);
+        ownerScore.AddCardToPlay(this);
     }
 
     public void SetHandPosition(Vector3 localPos)
@@ -88,4 +125,5 @@ public class CardFunction : MonoBehaviour, IClickable
         originalLocalPos = localPos;
     }
 }
+
 
